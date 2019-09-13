@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  max-width: none;
+  padding: 15px;
+}
+
+iframe {
+  height: 90vh !important;
+  width: 100%;
+}

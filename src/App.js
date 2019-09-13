@@ -17,7 +17,8 @@ export default class App extends React.Component {
       paperDropdownIsOpen: false,
       selectedYear: 2019,
       selectedPaper: 1,
-      selectedExam: "JC"
+      selectedExam: "jc",
+      paperURL: "/documents/papers/jc/2019/1.pdf"
     }
 
     this.toggleExamDropdown = this.toggleExamDropdown.bind(this);
@@ -66,39 +67,40 @@ export default class App extends React.Component {
   }
 
   loadPaper(){
-    console.log('loading', this.state.selectedExam, this.state.selectedYear, "paper", this.state.selectedPaper)
-  }
-
-  onDocumentLoadSuccess = ({numPages}) => {
-    this.setState({numPages});
+    this.setState({
+      paperURL: '/documents/papers/' + this.state.selectedExam + '/' + this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf',
+      solutionURL: '/documents/solutions/' + this.state.selectedExam + '/' + this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf'
+    });
+    console.log('loading: ' + '/documents/papers/' + this.state.selectedExam + '/' + this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf');
   }
 
   render(){
     return (
       <div className="App">
         <ButtonGroup>
-          <Button color="primary" onClick={() => this.selectExam('JC')} active={this.state.selectedExam === "JC"}>Junior Cert</Button>
-          <Button color="primary" onClick={() => this.selectExam('LC')} active={this.state.selectedExam === "LC"}>Leaving Cert</Button>
+          <Button onClick={() => this.selectExam('jc')} active={this.state.selectedExam === "jc"}>Junior Cert</Button>
+          <Button onClick={() => this.selectExam('lc')} active={this.state.selectedExam === "lc"}>Leaving Cert</Button>
           <ButtonDropdown isOpen={this.state.yearDropdownIsOpen} toggle={this.toggleYearDropdown}>
-            <DropdownToggle caret color="warning">{this.state.selectedYear}</DropdownToggle>
+            <DropdownToggle caret>{this.state.selectedYear}</DropdownToggle>
             <DropdownMenu>
               <DropdownItem onClick={() => this.selectYear(2019)}>2019</DropdownItem>
               <DropdownItem onClick={() => this.selectYear(2018)}>2018</DropdownItem>
               <DropdownItem onClick={() => this.selectYear(2017)}>2017</DropdownItem>
+              <DropdownItem onClick={() => this.selectYear(2016)}>2016</DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>
-          <Button color="success" onClick={() => this.selectPaper(1)} active={this.state.selectedPaper === 1}>Paper 1</Button>
-          <Button color="success" onClick={() => this.selectPaper(2)} active={this.state.selectedPaper === 2}>Paper 2</Button>
-          <Button color="danger" onClick={this.loadPaper}>Load</Button>
+          <Button onClick={() => this.selectPaper(1)} active={this.state.selectedPaper === 1}>Paper 1</Button>
+          <Button onClick={() => this.selectPaper(2)} active={this.state.selectedPaper === 2}>Paper 2</Button>
+          <Button color="success" onClick={this.loadPaper}>Load</Button>
         </ButtonGroup>
 
         <Container>
           <Row>
-            <Col>
-              <PDFViewer backend={PDFJSBackend} src='/documents/papers/jc/2019/1.pdf'/>
+            <Col className="paper">
+              <PDFViewer backend={PDFJSBackend} src={this.state.paperURL}/>
             </Col>
-            <Col>
-              <PDFViewer backend={PDFJSBackend} src='/documents/papers/jc/2019/1.pdf'/>
+            <Col className="solution">
+              <PDFViewer backend={PDFJSBackend} src={this.state.solutionURL}/>
             </Col>
           </Row >
         </Container>
