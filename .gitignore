@@ -1,1 +1,7 @@
 /node_modules
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*synctex*
+__latexindent_temp.tex

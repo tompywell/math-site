@@ -1,11 +1,7 @@
 import React from 'react';
-
 import { ButtonDropdown, Container, Col, Row, DropdownToggle, DropdownMenu, DropdownItem, Button, ButtonGroup } from 'reactstrap';
-
 import './App.css';
-
 import PDFViewer from './components/PDFViewer';
-import PDFJSBackend from './backends/pdfjs';
 
 export default class App extends React.Component {
   constructor(props){
@@ -18,68 +14,69 @@ export default class App extends React.Component {
       selectedYear: 2019,
       selectedPaper: 1,
       selectedExam: "jc",
-      paperURL: "/documents/papers/jc/2019/1.pdf"
-    }
+      paperURL: "/documents/papers/jc/2019/1.pdf",
+      solutionURL: "/documents/solutions/jc/2019/1.pdf",
+    };
 
-    this.toggleExamDropdown = this.toggleExamDropdown.bind(this);
-    this.toggleYearDropdown = this.toggleYearDropdown.bind(this);
-    this.togglePaperDropdown = this.togglePaperDropdown.bind(this);
-    this.selectExam = this.selectExam.bind(this);
-    this.selectYear = this.selectYear.bind(this);
-    this.selectPaper = this.selectPaper.bind(this);
-    this.loadPaper = this.loadPaper.bind(this);
-  }
+    this.toggleExamDropdown = () => {
+      this.setState({
+        examDropdownIsOpen: !this.state.examDropdownIsOpen
+      });
+    };
 
-  toggleExamDropdown(){
-    this.setState({
-      examDropdownIsOpen: !this.state.examDropdownIsOpen
-    })
-  }
-
-  toggleYearDropdown(){
-    this.setState({
-      yearDropdownIsOpen: !this.state.yearDropdownIsOpen
-    })
-  }
-
-  togglePaperDropdown(){
-    this.setState({
-      paperDropdownIsOpen: !this.state.paperDropdownIsOpen
-    })
-  }
-
-  selectYear(year){
-    this.setState({
-      selectedYear: year
-    });
-  }
-
-  selectPaper(paper){
-    this.setState({
-      selectedPaper: paper
-    });
-  }
-
-  selectExam(exam){
-    this.setState({
-      selectedExam: exam
-    });
-  }
-
-  loadPaper(){
-    this.setState({
-      paperURL: '/documents/papers/' + this.state.selectedExam + '/' + this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf',
-      solutionURL: '/documents/solutions/' + this.state.selectedExam + '/' + this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf'
-    });
-    console.log('loading: ' + '/documents/papers/' + this.state.selectedExam + '/' + this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf');
+    this.toggleYearDropdown = () => {
+      this.setState({
+        yearDropdownIsOpen: !this.state.yearDropdownIsOpen
+      });
+    };
+  
+    this.togglePaperDropdown = () => {
+      this.setState({
+        paperDropdownIsOpen: !this.state.paperDropdownIsOpen
+      });
+    };
+  
+    this.selectYear = (year) => {
+      this.setState({
+        selectedYear: year
+      });
+    };
+  
+    this.selectPaper = (paper) => {
+      this.setState({
+        selectedPaper: paper
+      });
+    };
+  
+    this.selectExam = (exam) => {
+      this.setState({
+        selectedExam: exam
+      });
+    };
+  
+    this.setURLs = () => {
+      this.setState({
+        paperURL:
+          '/documents/papers/' + this.state.selectedExam + '/' +
+          this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf',
+        solutionURL:
+          '/documents/solutions/' + this.state.selectedExam + '/' +
+          this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf'
+      });
+    };
   }
 
   render(){
+    const { paperURL, solutionURL } = this.state;
     return (
       <div className="App">
         <ButtonGroup>
-          <Button onClick={() => this.selectExam('jc')} active={this.state.selectedExam === "jc"}>Junior Cert</Button>
-          <Button onClick={() => this.selectExam('lc')} active={this.state.selectedExam === "lc"}>Leaving Cert</Button>
+          <Button onClick={() => this.selectExam('jc')} active={this.state.selectedExam === "jc"}>
+            Junior Cert
+          </Button>
+          <Button onClick={() => this.selectExam('lc')} active={this.state.selectedExam === "lc"}>
+            Leaving Cert
+          </Button>
           <ButtonDropdown isOpen={this.state.yearDropdownIsOpen} toggle={this.toggleYearDropdown}>
             <DropdownToggle caret>{this.state.selectedYear}</DropdownToggle>
             <DropdownMenu>
@@ -91,21 +88,20 @@ export default class App extends React.Component {
           </ButtonDropdown>
           <Button onClick={() => this.selectPaper(1)} active={this.state.selectedPaper === 1}>Paper 1</Button>
           <Button onClick={() => this.selectPaper(2)} active={this.state.selectedPaper === 2}>Paper 2</Button>
-          <Button color="success" onClick={this.loadPaper}>Load</Button>
+          <Button color="success" onClick={this.setURLs}>Load</Button>
         </ButtonGroup>
 
         <Container>
           <Row>
             <Col className="paper">
-              <PDFViewer backend={PDFJSBackend} src={this.state.paperURL}/>
+              <PDFViewer url={paperURL}/>
             </Col>
             <Col className="solution">
-              <PDFViewer backend={PDFJSBackend} src={this.state.solutionURL}/>
+              <PDFViewer url={solutionURL}/>
             </Col>
           </Row >
         </Container>
-
       </div>
     );
-  }
-}
+  };
+};
