@@ -5,3 +5,5 @@
 *.fdb_latexmk
 *synctex*
 __latexindent_temp.tex
+/build
+.firebase
