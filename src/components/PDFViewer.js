@@ -45,11 +45,11 @@ export default class PDFViewer extends React.Component {
           <Page pageNumber={pageNumber}/>
         </Document>
         <ButtonGroup>
-          <Button disabled={pageNumber<=1} onClick={this.previousPage}>
+          <Button outline disabled={pageNumber<=1} onClick={this.previousPage}>
             Previous
           </Button>
-          <Button disabled>Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}</Button>
-          <Button disabled={pageNumber>= numPages} onClick={this.nextPage}>
+          <Button outline disabled>Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}</Button>
+          <Button outline disabled={pageNumber>= numPages} onClick={this.nextPage}>
             Next
           </Button>
         </ButtonGroup>
