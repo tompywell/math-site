@@ -113,19 +113,15 @@ export default class App extends React.Component {
                   More
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
-                    <NavLink href="https://www.tompywell.me">
-                      tompywell.me
-                    </NavLink>
+                  <DropdownItem href="https://www.tompywell.me">
+                    tompywell.me
                   </DropdownItem>
-                  <DropdownItem>
-                    <NavLink href="https://www.github.com/tompywell/math-site">
-                      GitHub
-                    </NavLink>
+                  <DropdownItem href="https://www.github.com/tompywell/math-site">
+                    GitHub
                   </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem>
-                    Logout
+                  <DropdownItem >
+                    <strike>Logout</strike>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
