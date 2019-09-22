@@ -1,0 +1,598 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{multicol}
+\input longdiv.tex
+\usepackage{polynom}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+
+\begin{document}
+
+\tikzstyle{level 1}=[level distance=3cm, sibling distance=4cm]
+\tikzstyle{level 2}=[level distance=3cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=3cm, sibling distance=1cm]
+
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+\author{Tom Pywell}
+\title{2019 Junior Certificate Higher Level Paper Two}
+\maketitle
+
+\medskip
+
+\begin{enumerate}
+    %question 1
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item The range of data is the difference between the smallest and largest values.
+                \begin{equation*}
+                    172-141=31
+                \end{equation*}
+            \item
+                An outlier is a piece of data which 'stands out' for being different.
+                Usually a value much larger or smaller than the rest.
+                \begin{equation*}
+                    141\text{ is much smaller than the rest}
+                \end{equation*}
+            \item
+                The mean is what we generally consider as the 'average' of the data.
+                \begin{equation*}
+                    \frac{141+165+167+168+169+170+172+172}{8}=165.5cm
+                \end{equation*}
+            \item
+                For most of the teachers to be taller than 175cm, then the median height must be 175cm or greater.
+        \end{enumerate}
+    
+    %question 2
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item Categorical Nominal\\
+                
+            \item Car\\
+            
+            \item
+            \begin{center}
+                \begin{tabular}{ |c|c|c|c|c| } 
+                    \hline
+                    &\multicolumn{2}{c|}{2006}&\multicolumn{2}{c|}{2016}\\
+                    \hline
+                    \text{way of travelling}&men&women&men&women\\
+                    \hline
+                    \text{walk or cycle}&12.1&15.4&12.2&12.6\\ 
+                    \text{bus or train}&8.0&11.3&8.3&10.5\\ 
+                    \text{car}&62.6&71.4&60.0&71.9\\
+                    \text{other}&15.3&0.7&14.2&0.4\\
+                    \text{not stated}&2&1.2&5.3&4.6\\
+                    \hline
+                    \text{Total}&100.0&100.0&100.0&100.0\\
+                    \hline
+                \end{tabular}
+           \end{center}
+           
+            \item 
+                \begin{equation*}
+                        15.4 > 12.1
+                \end{equation*}
+
+            \item Alison is incorrect. If more women were surveyed in 2006, even a larger percentage in 2016 could repersent a smaller amount.
+
+            \item
+                \begin{equation*}
+                    \begin{split}
+                        990000*8.3\%+880000*10.5\%&=174570\text{ people who travelled to work by bus or train}\\
+                        \frac{174570}{990000+880000}*\frac{100}{1}&=9.34\%
+                    \end{split}
+                \end{equation*}
+
+            \item
+                \begin{enumerate}
+                    \item
+                        \begin{center}
+                            \begin{tabular}{ |c|c|c|c|c|c| } 
+                                \hline
+                                way of travelling&walk or cycle&bus or train&car&other&not stated\\
+                                \hline
+                                \% of men in 2016&12.2&8.3&60.0&14.2&5.3\\
+                                \hline
+                                Angle in pie chart&44&30&216&51&19\\
+                                \hline
+                            \end{tabular}
+                    \end{center}
+                        \begin{equation*}
+                            \begin{split}
+                                360*12.2\%&=44\\
+                                360*8.3\%&=30\\
+                                360*60\%&=216\\
+                                360*14.2\%&=51\\
+                                360*5.3\%&=19
+                            \end{split}
+                        \end{equation*}
+                    \item TODO
+                \end{enumerate}
+                \item The amount of students travelling to school by foot or bicycle saw a large decline between 1986 and 2002, from about 50\% to 28\% but has remained steady since.
+                    The amount of travelling by car showed the opposite, a large increase, starting at 25\% and ending at close to 60\%.
+                    The amount of students taking the bus or train shows a much less aggresive decline since 1986.
+            \end{enumerate}
+            
+    %question 3
+    \pagebreak
+    \item
+        \begin{center}
+            \begin{tabular}{|c|c|} 
+                \hline
+                Transformation&Image\\
+                \hline
+                Axial Symmetry in the x-axis&S\\
+                Axial Symmetry in the y-axis&T\\
+                Translation&P\\
+                Central symmetry in the origin&Q\\
+                \hline
+            \end{tabular}
+        \end{center}
+            
+
+    %question 4
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item TODO
+            \begin{equation*}
+                \begin{split}
+                \end{split}
+            \end{equation*}
+            
+            \item TODO
+            \begin{equation*}
+                \begin{split}
+                \end{split}
+            \end{equation*}
+        \end{enumerate}
+
+    %question 5
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item 
+            \begin{equation*}
+                \begin{split}
+                    \text{Shop }&(-3, 1)\\
+                    \text{Home }&(4, 2)\\
+                    \text{School }&(4, 5)
+                \end{split}
+            \end{equation*}
+            
+            \item Use the midpoint formula to find the midpoint of 2 points, (x1, y1) and (x2, y2).
+            \begin{equation*}
+                \begin{split}
+                    Home&=(4,2)=(x_{1},y_{1})\\
+                    Shop&=(-3,1)=(x_{2},y_{2})\\
+                    midpoint&=(\frac{x_{1}+x_{2}}{2} , \frac{y_{1}+y_{2}}{2})\\
+                    &=(\frac{4+-3}{2} , \frac{2+1}{2})\\
+                    &=(\frac{1}{2} , \frac{3}{2})\\
+                    &=(0.5,1.5)
+                \end{split}
+            \end{equation*}
+
+            \item Use the distance formula to find the distance between 2 points, (x1, y1) and (x2, y2).
+            \begin{equation*}
+                \begin{split}
+                    Home&=(4,2)=(x_{1},y_{1})\\
+                    Shop&=(-3,1)=(x_{2},y_{2})\\
+                    distance &= \sqrt{\left({x_1-x_2}\right)^2+\left({y_1-y_2}\right)^2}\\
+                    &=\sqrt{\left({4--3}\right)^2+\left({2-1}\right)^2}\\
+                    &=\sqrt{\left({7}\right)^2+\left({1}\right)^2}\\
+                    &=\sqrt{49+1}\\
+                    &=\sqrt{50}\\
+                    &=7.07\\
+                \end{split}
+            \end{equation*}
+
+            \item
+            \begin{equation*}
+                \begin{split}
+                    \text{1 unit on diagram}&=\text{2500 units in real life.}\\
+                    \text{8.1 cm on diagram}&=\text{2500*8.1cm in real life}\\
+                    &=20250cm\\
+                    &=202.5m\\
+                \end{split}
+            \end{equation*}
+
+            \item It is very unlikely she walks an exact straight line between the shop and the school. Any deviation from the straight line willl result in a larger distance.
+
+            \item Use the slope formula to find the slope between 2 points, (x1, y1) and (x2, y2).
+            \begin{equation*}
+                \begin{split}
+                    Shop&=(-3,1)=(x_{1},y_{1})\\
+                    School&=(4,5)=(x_{2},y_{2})\\
+                    slope&=(\frac{y_{2}-y_{1}}{x_{2}-x_{1}})\\
+                    &=(\frac{5-1}{4--3})\\
+                    &=(\frac{4}{7})\\
+                \end{split}
+            \end{equation*}
+
+            \item Use the equation of a line formula with slope m and any point (x1, y1).
+            \begin{equation*}
+                \begin{split}
+                    slope &= m = \frac{4}{7}\\
+                    point &= (x_{1},y_{1}) = (4,5)\\
+                    y-y_{1}&=m(x-x_{1})\\
+                    y-5&=\frac{4}{7}(x-4)\\
+                    7y-35&=4x-16\\
+                    4x-7y+19&=0
+                \end{split}
+            \end{equation*}
+
+            \item If we make a triangle with 
+            \begin{equation*}
+                \begin{split}
+                    tan(l)&=\frac{4}{7}\\
+                    tan^{-1}(\frac{4}{7})&=l\\
+                    29.7\ degrees=l
+                \end{split}
+            \end{equation*}
+        \end{enumerate}
+
+    %question 6
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item \ 
+            \begin{center}
+                \begin{tabular}{|c|c|c|c|} 
+                    \hline
+                    Type of angle&Acute&Reflex&Obtuse\\
+                    \hline
+                    Angle&K&N&M\\
+                    \hline
+                \end{tabular}
+            \end{center}
+            
+            \item
+            \begin{equation*}
+                \begin{split}
+                    K&=\text{60 degrees, it's an equilateral}\\
+                    M&=\text{120 degrees, because K+M=180 degress (straight line)}\\
+                    N&=\text{240 degrees, 360(full circle) - 60 - 60 = 240}
+                \end{split}
+            \end{equation*}
+
+            \item
+                \begin{enumerate}
+                    \item The 2 trianlges are similar because their angles are the same (60 degrees).
+                    \item The 2 trianlges are not congruent because their sides are not the ame length.
+                \end{enumerate}
+            \item TODO
+                \begin{equation*}
+                    \begin{split}
+                    \end{split}
+                \end{equation*}
+        \end{enumerate}
+
+    %question 7
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item 
+            \begin{equation*}
+                \begin{split}
+                    \text{Diagram A}\\
+                    \text{4 + 10 + 3rd side}&= 26\\
+                    \text{3rd side}&=26-4-10\\
+                    &=12\\
+                    \text{Diagram B}\\
+                    \text{9 + 10 + 3rd side}&= 26\\
+                    \text{3rd side}&=26-9-10\\
+                    &=7
+                \end{split}
+            \end{equation*}
+            
+            \item
+            \begin{equation*}
+                \begin{split}
+                    \text{4 or 9 or 10}
+                \end{split}
+            \end{equation*}
+
+            \item
+            \begin{enumerate}
+                \item
+                \begin{equation*}
+                    \begin{split}
+                        19cm^2
+                    \end{split}
+                \end{equation*}
+    
+                \item
+                \begin{equation*}
+                    \begin{split}
+                        TODO
+                    \end{split}
+                \end{equation*}
+    
+                \item TODO
+                \begin{equation*}
+                    \begin{split}
+                        x=8
+                    \end{split}
+                \end{equation*}
+            \end{enumerate}
+
+            \item Disprove pythagoras theorem.
+            \begin{equation*}
+                \begin{split}
+                    a^2+b^2&\neq c^2\\
+                    5^2+10^2&\neq11^2\\
+                    25+100&\neq121
+                \end{split}
+            \end{equation*}
+
+            \item Construct a perpendicular line from the bottom side to the top angle in order to find the height of the triangle. Then use the area of a triangle formula.
+            \begin{equation*}
+                \begin{split}
+                    height&=\sqrt{8^2-5^2}\\
+                    &=\sqrt{64-25}\\
+                    &=\sqrt{39}\\
+                    \\            
+                    Area&=\frac{1}{2}*base*height\\
+                    &=\frac{1}{2}*10*\sqrt{39}\\
+                    &=5\sqrt{39}
+                \end{split}
+            \end{equation*}
+        \end{enumerate}
+
+    %question 8
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item 1
+            
+            \item Roll a 7 or an 8, representing 2 out of 6 possible outcomes.
+            \begin{equation*}
+                \begin{split}
+                    \text{P(greater than 6)}&=\frac{2}{6}\\
+                    &=\frac{1}{3}
+                \end{split}
+            \end{equation*}
+
+            \item First find the probability of rolling an odd number in 1 roll. 4 out of 6 possible outcomes are odd.
+            \begin{equation*}
+                \begin{split}
+                    \text{P(odd)}&=\frac{4}{6}\\
+                    &=\frac{2}{3}\\
+                \end{split}
+            \end{equation*}
+            Then multiple this probability by the number of rolls.
+            \begin{equation*}
+                \begin{split}
+                    60*\frac{2}{3}=40
+                \end{split}
+            \end{equation*}
+            \item \ 
+                \begin{center}
+                    \begin{tabular}{|c|c|} 
+                        \hline
+                        Description&Term\\
+                        \hline
+                        The set of all possible outcomes of an experiment&Sample Space\\
+                        One possible result of an experiement&Outcome\\
+                        A subset of the sample space - a collection of one or more outcomes&Event\\
+                        \hline
+                    \end{tabular}
+                \end{center}
+        \end{enumerate}
+
+    %question 9
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item (i), (ii), (iii)
+            \begin{tikzpicture}[grow=right, sloped]
+                \node[bag] {}
+                    child {
+                        node[bag] {T}        
+                        child {
+                            node[end, label=above:{T}] {}
+                            child {
+                                node[end, label=right:{T, TTT, 0}] {}
+                            }
+                            child {
+                                node[end, label=right:{H, TTH, 1}] {}
+                            }
+                        }
+                        child {
+                            node[end, label=above:{H}] {}
+                            child {
+                                node[end, label=right:{T, THT, 1}] {}
+                            }
+                            child {
+                                node[end, label=right:{H, THH, 2}] {}
+                            }
+                        }
+                    }
+                    child {
+                        node[bag] {H}        
+                        child {
+                            node[end, label=above:{T}] {}
+                            child {
+                                node[end, label=right:{T, HTT, 1}] {}
+                            }
+                            child {
+                                node[end, label=right:{H, HTH, 2}] {}
+                            }
+                        }
+                        child {
+                            node[end, label=above:{H}] {}
+                            child {
+                                node[end, label=right:{T, HHT, 2}] {}
+                            }
+                            child {
+                                node[end, label=right:{H, HHH, 3}] {}
+                            }
+                        }      
+                    };
+                \end{tikzpicture}
+            
+            \item \ 
+            \begin{center}
+                \begin{tabular}{|c|c|c|c|c|} 
+                    \hline
+                    Number of Heads (H)&0&1&2&3\\
+                    \hline
+                    Probability&$\frac{1}{8}$&$\frac{3}{8}$&$\frac{3}{8}$&$\frac{1}{8}$\\
+                    \hline
+                \end{tabular}
+            \end{center}
+
+            \item
+                \begin{enumerate}
+                    \item To flip no heads after 8 coin flips is very unlikely. The can only happen in the event that she flips all tails.
+                    \begin{equation*}
+                        \begin{split}
+                            1
+                        \end{split}
+                    \end{equation*}
+
+                    \item There are 8 outcomes with exactly 1 head. A head on the first flip only, or a tail on the second flip only or the thirs flip only, and so on.
+                    \begin{equation*}
+                        \begin{split}
+                            8
+                        \end{split}
+                    \end{equation*}
+                \end{enumerate}
+            \item
+                \begin{equation*}
+                    2*2*2*2*2*2*2*2=2^8=256
+                \end{equation*}
+        \end{enumerate}
+
+    %question 10
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item Use the circumference of a circle formula.
+            \begin{equation*}
+                \begin{split}
+                    C&=2 \pi r = \pi d\\
+                    &=\pi(8)\\
+                    &=25.1
+                \end{split}
+            \end{equation*}
+            
+            \item The rubber track goes around the circumference of a semi-circle on both ends,
+            and over 3 diameters of the circle on the top and the bottom.
+            \begin{equation*}
+                \begin{split}
+                    length&=(semicircle)+(semicircle)+(top\ straight)+(bottom\ straight)\\
+                    &=(\pi r)+(\pi r)+(3d)+3d)\\
+                    &=2(\pi r)+(6d)\\
+                    &=25.1+48\\
+                    &=73.1
+                \end{split}
+            \end{equation*}
+
+            \item We need to divide the total length of track by the length of circumference of one wheel.
+            \begin{equation*}
+                \begin{split}
+                    turns&=\frac{length\ of\ track}{circumference\ of\ wheel}\\
+                    &=\frac{73.1}{25.1}\\
+                    &=2.9124\\
+                    &=2\ full\ turns
+                \end{split}
+            \end{equation*}
+        \end{enumerate}
+
+    %question 11
+    \pagebreak
+    \item Divide the shape into 2 smaller rectangles.
+    The smaller one on the left having dimensions s and 6-s.
+    And the larger right one having dimensions 6 and 10-s.
+        \begin{enumerate}
+            \item 
+            \begin{equation*}
+                \begin{split}
+                    Area_{\ total}&=Area_{\ smaller}+Area_{\ bigger}\\
+                    &=(s)(6-s)+(6)(10-s)\\
+                    &=(6s-s^2)+(60-6s)\\
+                    &=60-s^2
+                \end{split}
+            \end{equation*}
+            
+            \item
+            \begin{equation*}
+                \begin{split}
+                    Perimeter&=10+6+(10-s)+(6-s)+s+s\\
+                    &=10+10+6+6\\
+                    &=32\text{, since the s's cancel, the value doesn't matter}
+                \end{split}
+            \end{equation*}
+        \end{enumerate}
+
+    %question 12
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item TODO
+            \begin{equation*}
+                \begin{split}
+                \end{split}
+            \end{equation*}
+        \end{enumerate}
+
+    %question 13
+    \pagebreak
+    \item
+        \begin{enumerate}
+            \item 
+            \begin{equation*}
+                \begin{split}
+                    sin(20)&=\frac{6}{x}\\
+                    (x)sin(20)&=6\\
+                    x&=\frac{6}{sin(20)}\\
+                    &=17.54
+                \end{split}
+            \end{equation*}
+            
+            \item
+            \begin{equation*}
+                \begin{split}
+                    cos(Y)&=\frac{a}{c}\\
+                    sin(Y)&=\frac{b}{c}\\
+                    cos(Y)+sin(Y)&=\frac{a}{c}+\frac{b}{c}\\
+                    &=\frac{a+b}{c}\\
+                    if\ a+b>c,\ th&en\ \frac{a+b}{c}>1\text{, since numerator $>$ denominator}
+                \end{split}
+            \end{equation*}
+        \end{enumerate}
+
+    %question 14
+    \pagebreak
+    \item
+        \begin{equation*}
+            \begin{split}
+                V_{\ cylinder}&=\pi r^2h=\pi r^2 10=10\pi r^2\\
+                V_{\ cone}&=\pi r^2\frac{h}{3}\\
+                V_{\ cone}&=V_{\ cylinder}*90\%\\
+                \pi r^2\frac{h}{3}&=10\pi r^2*90\%\\
+                \pi r^2\frac{h}{3}&=9\pi r^2\\
+                r^2\frac{h}{3}&=9r^2\\
+                \frac{h}{3}&=9\\
+                h&=27\\
+                increase&=\frac{new\ height-old\ height}{old\ height}\\
+                &=\frac{27-10}{10}\\
+                &=\frac{17}{10}\\
+                &=170\%\ increase
+            \end{split}
+        \end{equation*}
+    \end{enumerate}
+\end{document}
