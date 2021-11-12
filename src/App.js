@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonDropdown, Container, Col, Row, DropdownToggle, DropdownMenu, DropdownItem, Button, ButtonGroup, Collapse,
-  Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown } from 'reactstrap';
+  Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, UncontrolledDropdown } from 'reactstrap';
 import './App.css';
 import PDFViewer from './components/PDFViewer';
 
@@ -12,11 +12,11 @@ export default class App extends React.Component {
       examDropdownIsOpen: false,
       yearDropdownIsOpen: false,
       paperDropdownIsOpen: false,
-      selectedYear: 2019,
+      selectedYear: 2021,
       selectedPaper: 1,
-      selectedExam: "jc",
-      paperURL: "/documents/papers/jc/2019/1.pdf",
-      solutionURL: "/documents/solutions/jc/2019/1.pdf",
+      selectedExam: "lc",
+      paperURL: "/documents/papers/lc/2021/1.pdf",
+      solutionURL: "/documents/solutions/lc/2021/1.pdf",
     };
 
     this.toggleExamDropdown = () => {
@@ -62,13 +62,18 @@ export default class App extends React.Component {
           this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf',
         solutionURL:
           '/documents/solutions/' + this.state.selectedExam + '/' +
-          this.state.selectedYear + '/' + this.state.selectedPaper + '.pdf'
+          this.state.selectedYear + '/' + 1 + '.pdf'
       });
     };
   }
 
   render(){
     const { paperURL, solutionURL } = this.state;
+    const years = []
+    for (var i=2021; i>=2010; i--){
+      years.push(i)
+    }
+    const yearDropdownItems = years.map((y) => (<DropdownItem onClick={() => this.selectYear(y)} key={y}>{y}</DropdownItem>))
     return (
       <div className="App">
         <Navbar color="light" light expand="md">
@@ -90,10 +95,7 @@ export default class App extends React.Component {
                 <ButtonDropdown isOpen={this.state.yearDropdownIsOpen} toggle={this.toggleYearDropdown}>
                   <DropdownToggle outline caret>{this.state.selectedYear}</DropdownToggle>
                   <DropdownMenu>
-                    <DropdownItem onClick={() => this.selectYear(2019)}>2019</DropdownItem>
-                    <DropdownItem onClick={() => this.selectYear(2018)}>2018</DropdownItem>
-                    <DropdownItem onClick={() => this.selectYear(2017)}>2017</DropdownItem>
-                    <DropdownItem onClick={() => this.selectYear(2016)}>2016</DropdownItem>
+                    {yearDropdownItems}
                   </DropdownMenu>
                 </ButtonDropdown>
               </NavItem>
